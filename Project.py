@@ -23,10 +23,10 @@ def delete():
         del Appointments[number - 1]
         print("Appointment deleted successfully.")
     except Exception: 
-        if number - 1 < 0 or number - 1 >= len(Appointments):
+        if not Appointments:
+            print("No appointments to delete!!")
+        elif number - 1 < 0 or number - 1 >= len(Appointments):
             print("Index out of range!!")
-        else:
-            print("The list is empty!!")
 while True:
     print("----------------\n1. Add a new appointment.\n2. Show all appointments.\n3. Delete an appointment.\n4. Exit.\n----------------")
     number = int (input("Enter a number: "))
